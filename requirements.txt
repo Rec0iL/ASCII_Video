@@ -1,0 +1,6 @@
+customtkinter
+opencv-python-headless
+numpy
+Pillow
+tkinterdnd2
+platformdirs

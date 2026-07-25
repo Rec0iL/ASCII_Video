@@ -1,0 +1,26 @@
+[project]
+name = "ascii-video"
+version = "0.1.0"
+description = "Convert video to ASCII animation, with procedural ASCII pattern generators."
+requires-python = ">=3.10"
+dependencies = [
+    "customtkinter",
+    "opencv-python-headless",
+    "numpy",
+    "Pillow",
+    "tkinterdnd2",
+    "platformdirs",
+]
+
+[project.scripts]
+ascii-video = "ascii_video.app:main"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["ascii_video*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
