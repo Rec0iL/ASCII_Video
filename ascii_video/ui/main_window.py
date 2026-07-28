@@ -90,7 +90,7 @@ class MainWindow(*_BASE_CLASSES):
         body = ctk.CTkFrame(self, fg_color="transparent")
         body.pack(fill="both", expand=True, padx=10, pady=10)
 
-        controls_container = ctk.CTkFrame(body, width=310)
+        controls_container = ctk.CTkFrame(body, width=340)
         controls_container.pack(side="left", fill="y", padx=(0, 10))
         controls_container.pack_propagate(False)
 

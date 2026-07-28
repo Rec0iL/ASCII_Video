@@ -113,6 +113,15 @@ class GeneratorControlsPanel(ctk.CTkFrame):
             if p.kind == "bool":
                 var = ctk.BooleanVar(value=p.default)
                 ctk.CTkSwitch(self._widgets_frame, text=p.label, variable=var, command=self.on_change).pack(anchor="w", pady=2)
+            elif p.kind == "choice":
+                var = ctk.StringVar(value=p.default)
+                row = ctk.CTkFrame(self._widgets_frame, fg_color="transparent")
+                row.pack(fill="x", pady=2)
+                ctk.CTkLabel(row, text=p.label, width=90, anchor="w").pack(side="left")
+                ctk.CTkOptionMenu(
+                    row, values=list(p.choices or []), variable=var,
+                    command=lambda _=None: self.on_change(),
+                ).pack(side="left", fill="x", expand=True)
             elif p.kind in ("float", "int"):
                 var = ctk.DoubleVar(value=p.default) if p.kind == "float" else ctk.IntVar(value=p.default)
                 row = ctk.CTkFrame(self._widgets_frame, fg_color="transparent")
